@@ -2,5 +2,11 @@
   "manifest_version": 3,
   "version": "1.0",
   "name": "Adblock With DeepNetwork",
-  "description": "Adblock With DeepNetwork"
+  "description": "Adblock With DeepNetwork",
+  "icons": {
+    "16": "assets/icon/cheese-16.png",
+    "32": "assets/icon/cheese-32.png",
+    "48": "assets/icon/cheese-48.png",
+    "128": "assets/icon/cheese-128.png"
+  }
 }
