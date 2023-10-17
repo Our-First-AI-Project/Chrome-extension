@@ -1,0 +1,101 @@
+@font-face {
+  font-family: "NanumSquareRound";
+  src: url("../assets/font/NanumSquareRoundB.ttf") format("truetype");
+  font-style: normal;
+}
+
+:root {
+  /* variables - color */
+  --color-black: #363636;
+  --color-white: #f0f0f0;
+  --color-pink: #fe9c9c;
+  --color-gray: #61677a;
+  --color-yellow: #ffc107;
+  --color-beige: #fff6e0;
+  --color-green: #27cea5;
+  /* variables - text size */
+  --text-title: 2rem;
+  --text-subtitle: 1.6rem;
+  --text-main: 1.2rem;
+  --text-sub: 0.8rem;
+  /* variables - font */
+  --font-main: "NanumSquareRound", sans-serif;
+}
+
+/* default tag style */
+
+html {
+  font-size: 10px;
+}
+
+body {
+  font-size: var(--text-main);
+  font-family: var(--font-main);
+  color: var(--color-white);
+  background-color: var(--color-black);
+  width: fit-content;
+  padding: 0 1rem 1rem 1rem;
+}
+
+p {
+  margin: 0;
+}
+
+hr {
+  margin: 0;
+}
+
+h1 {
+  font-size: var(--text-title);
+  margin: 0;
+}
+
+h2 {
+  font-size: var(--text-subtitle);
+  margin: 0;
+}
+
+button {
+  color: var(--color-white);
+  font-family: var(--font-main);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  width: fit-content;
+  height: fit-content;
+  display: flex;
+  align-items: center;
+}
+
+a:link {
+  color: var(--color-white);
+}
+
+a:visited {
+  color: var(--color-white);
+}
+
+a:hover {
+  color: var(--color-yellow);
+}
+
+a:active {
+  color: var(--color-yellow);
+}
+
+/* general style */
+
+.line {
+  height: 0.2rem;
+  border: none;
+  background-color: var(--color-white);
+}
+
+.line.yellow {
+  background-color: var(--color-yellow);
+}
+
+.line.beige {
+  background-color: var(--color-beige);
+}

@@ -1,0 +1,136 @@
+.section {
+  padding: 0.9rem;
+  position: relative;
+}
+
+/* ANCHOR - section-support-title */
+
+.section-support-title {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.section-support-button box-icon {
+  width: 1.4rem;
+  height: 1.4rem;
+  fill: var(--color-white);
+}
+
+.section-support-button:hover box-icon {
+  fill: var(--color-yellow);
+}
+
+/* ANCHOR - section-support-help*/
+
+.section-support-help {
+  display: none;
+  font-size: var(--text-sub);
+  background-color: var(--color-white);
+  color: var(--color-black);
+  padding: 0.2rem 0.95rem;
+  border-radius: 1rem;
+}
+
+.section-support-help a {
+  color: var(--color-black);
+  display: flex;
+  align-items: center;
+}
+
+.section-support-help a:hover {
+  color: var(--color-yellow);
+}
+
+.section-support-help.show {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  z-index: 1;
+  top: -0.9rem;
+}
+
+/* ANCHOR - section-support-text*/
+
+#section-support-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1.2rem 0 1.6rem 0;
+}
+
+#section-support-text.support {
+  color: var(--color-green);
+  fill: var(--color-green);
+}
+
+#section-support-text.not-support {
+  color: var(--color-pink);
+  fill: var(--color-pink);
+}
+
+/* ANCHOR - section-toggle*/
+
+.toggle-container {
+  display: flex;
+  justify-content: center;
+  padding: 1.3rem 0 1.1rem 0;
+}
+
+.toggle-backgroud {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 8.2rem;
+  background-color: var(--color-green);
+  border-radius: 2.5rem;
+  cursor: pointer;
+  padding: 0 0.3rem;
+}
+
+.toggle-text {
+  display: block;
+  margin: 0.9rem 1.7rem;
+}
+
+.toggle-button {
+  width: 2.5rem;
+  height: 2.5rem;
+  background-color: var(--color-white);
+  border-radius: 50%;
+}
+
+.toggle-backgroud.toggle-off {
+  background-color: var(--color-gray);
+  flex-direction: row-reverse;
+}
+
+/* ANCHOR - option-button*/
+
+.option-button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 0;
+  gap: 1rem;
+  padding: 0.8rem 0;
+}
+
+.option-button {
+  padding: 0.6rem 1.3rem;
+  border-radius: 0.5rem;
+  background: var(--color-yellow);
+  color: var(--color-black);
+}
+
+.option-button:hover {
+  background: var(--color-beige);
+}
+
+.option-button:disabled {
+  background: var(--color-gray);
+  color: var(--color-white);
+  cursor: not-allowed;
+}

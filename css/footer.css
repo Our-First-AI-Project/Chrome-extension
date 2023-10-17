@@ -1,0 +1,27 @@
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.footer a {
+  color: var(--color-white);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: var(--text-main);
+}
+
+.footer a:hover {
+  color: var(--color-yellow);
+}
+
+.footer a box-icon {
+  fill: var(--color-white);
+  /* width: var(--text-subtitle); */
+}
+
+.footer a:hover box-icon {
+  fill: var(--color-yellow);
+}

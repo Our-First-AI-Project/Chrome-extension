@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Adblock With DeepNetwork</title>
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <link rel="stylesheet" href="../css/index.css" />
+    <link rel="stylesheet" href="../css/header.css" />
+    <link rel="stylesheet" href="../css/section.css" />
+    <link rel="stylesheet" href="../css/footer.css" />
+  </head>
+  <body>
+    <header class="header">
+      <img class="logo" src="../assets/icon/cheese-128.png" alt="Icon" />
+      <h1 class="header-title">
+        AdBlock With<br />
+        DeepNetwork
+      </h1>
+    </header>
+    <hr class="line yellow" />
+    <section class="section">
+      <div class="section-support-help">
+        <span>현재 지원되는 사이트는 &nbsp;</span>
+        <a href="https://sports.chosun.com/">스포츠조선</a>
+        <span>&nbsp;입니다.</span>
+      </div>
+      <div class="section-support-title">
+        <h2 class="section-title">광고 차단 지원 확인</h2>
+        <button class="section-support-button">
+          <box-icon name="help-circle"></box-icon>
+        </button>
+      </div>
+      <!-- <p id="section-support-text" class="support"> -->
+      <p id="section-support-text" class="not-support">
+        <!-- 지원 여부 표시 (스크립트에서 채워짐) -->
+        <!-- <box-icon name="check-circle"></box-icon>
+        <span>
+          현재 페이지는 <br />
+          광고 차단을 지원합니다.
+        </span> -->
+        <box-icon name="x-circle"></box-icon>
+        <span>
+          현재 페이지는 <br />
+          광고 차단을 지원하지 않습니다.
+        </span>
+      </p>
+    </section>
+    <hr class="line beige" />
+    <section class="section">
+      <h2 class="section-title">광고 차단</h2>
+      <div class="toggle-container">
+        <div class="toggle-backgroud">
+          <!-- <div class="toggle-backgroud toggle-off"> -->
+          <!-- background : on / off 여부에 따라 배경색 변환 -->
+          <!-- 스크립트로 토글 내 text 결정 -->
+          <span class="toggle-text">On</span>
+          <div class="toggle-button"></div>
+        </div>
+      </div>
+    </section>
+    <hr class="line beige" />
+    <section class="section">
+      <h2 class="section-title">옵션</h2>
+      <div class="option-button-container">
+        <button class="option-button">광고 차단</button>
+        <button class="option-button" disabled>광고 분류</button>
+      </div>
+    </section>
+    <footer class="footer">
+      <a href="https://github.com/Our-First-AI-Project"
+        ><box-icon name="github" type="logo"></box-icon> Github</a
+      >
+    </footer>
+  </body>
+</html>
