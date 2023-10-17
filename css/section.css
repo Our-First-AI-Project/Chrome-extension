@@ -106,3 +106,31 @@
   background-color: var(--color-gray);
   flex-direction: row-reverse;
 }
+
+/* ANCHOR - option-button*/
+
+.option-button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 0;
+  gap: 1rem;
+  padding: 0.8rem 0;
+}
+
+.option-button {
+  padding: 0.6rem 1.3rem;
+  border-radius: 0.5rem;
+  background: var(--color-yellow);
+  color: var(--color-black);
+}
+
+.option-button:hover {
+  background: var(--color-beige);
+}
+
+.option-button:disabled {
+  background: var(--color-gray);
+  color: var(--color-white);
+  cursor: not-allowed;
+}
