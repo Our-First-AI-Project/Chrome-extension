@@ -1,0 +1,64 @@
+@font-face {
+  font-family: "NanumSquareRound";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/NanumSquareRound.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+  /* variables - color */
+  --color-black: #363636;
+  --color-white: #f0f0f0;
+  --color-pink: #fe9c9c;
+  --color-gray: #61677a;
+  --color-yellow: #ffc107;
+  --color-beige: #fff6e0;
+  --color-green: #27cea5;
+  /* variables - text size */
+  --text-title: 2rem;
+  --text-subtitle: 1.6rem;
+  --text-main: 1.2rem;
+  --text-sub: 0.8rem;
+  /* variables - font */
+  --font-main: "NanumSquareRound", sans-serif;
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  font-size: var(--text-main);
+  font-family: var(--font-main);
+}
+
+h1 {
+  font-size: var(--text-title);
+}
+
+h2 {
+  font-size: var(--text-subtitle);
+}
+
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+a:link {
+  color: var(--color-black);
+}
+
+a:visited {
+  color: var(--color-black);
+}
+
+a:hover {
+  color: var(--color-yellow);
+}
+
+a:active {
+  color: var(--color-yellow);
+}
