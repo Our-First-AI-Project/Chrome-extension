@@ -1,6 +1,9 @@
 .section {
   padding: 0.9rem;
+  position: relative;
 }
+
+/* ANCHOR - section-support-title */
 
 .section-support-title {
   display: flex;
@@ -17,4 +20,33 @@
 
 .section-support-button:hover box-icon {
   fill: var(--color-yellow);
+}
+
+/* ANCHOR - section-support-help*/
+
+.section-support-help {
+  display: none;
+  font-size: var(--text-sub);
+  background-color: var(--color-white);
+  color: var(--color-black);
+  padding: 0.2rem 0.95rem;
+  border-radius: 1rem;
+}
+
+.section-support-help a {
+  color: var(--color-black);
+  display: flex;
+  align-items: center;
+}
+
+.section-support-help a:hover {
+  color: var(--color-yellow);
+}
+
+.section-support-help.show {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  z-index: 1;
+  top: -0.9rem;
 }
