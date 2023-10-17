@@ -35,10 +35,12 @@ body {
 
 h1 {
   font-size: var(--text-title);
+  margin: 0;
 }
 
 h2 {
   font-size: var(--text-subtitle);
+  margin: 0;
 }
 
 button {
@@ -62,4 +64,20 @@ a:hover {
 
 a:active {
   color: var(--color-yellow);
+}
+
+/* general style */
+
+.line {
+  height: 0.2rem;
+  border: none;
+  background-color: var(--color-white);
+}
+
+.line.yellow {
+  background-color: var(--color-yellow);
+}
+
+.line.beige {
+  background-color: var(--color-beige);
 }
