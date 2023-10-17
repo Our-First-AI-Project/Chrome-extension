@@ -50,3 +50,23 @@
   z-index: 1;
   top: -0.9rem;
 }
+
+/* ANCHOR - section-support-text*/
+
+#section-support-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1.2rem 0 1.6rem 0;
+}
+
+#section-support-text.support {
+  color: var(--color-green);
+  fill: var(--color-green);
+}
+
+#section-support-text.not-support {
+  color: var(--color-pink);
+  fill: var(--color-pink);
+}
