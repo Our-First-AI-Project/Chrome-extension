@@ -8,5 +8,9 @@
     "32": "assets/icon/cheese-32.png",
     "48": "assets/icon/cheese-48.png",
     "128": "assets/icon/cheese-128.png"
+  },
+  "action": {
+    "default_popup": "page/popup.html",
+    "default_icon": "assets/icon/cheese-128.png"
   }
 }
