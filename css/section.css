@@ -70,3 +70,39 @@
   color: var(--color-pink);
   fill: var(--color-pink);
 }
+
+/* ANCHOR - section-toggle*/
+
+.toggle {
+  display: flex;
+  justify-content: center;
+  padding: 1.3rem 0 1.1rem 0;
+}
+
+.toggle .toggle-backgroud {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 8.2rem;
+  background-color: var(--color-green);
+  border-radius: 2.5rem;
+  cursor: pointer;
+  padding: 0 0.3rem;
+}
+
+.toggle .toggle-text {
+  display: block;
+  margin: 0.9rem 1.7rem;
+}
+
+.toggle .toggle-button {
+  width: 2.5rem;
+  height: 2.5rem;
+  background-color: var(--color-white);
+  border-radius: 50%;
+}
+
+.toggle .toggle-backgroud.toggle-off {
+  background-color: var(--color-gray);
+  flex-direction: row-reverse;
+}
