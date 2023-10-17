@@ -29,6 +29,8 @@ html {
 body {
   font-size: var(--text-main);
   font-family: var(--font-main);
+  color: var(--color-white);
+  background-color: var(--color-black);
 }
 
 h1 {
@@ -40,17 +42,18 @@ h2 {
 }
 
 button {
+  color: var(--color-white);
   background: none;
   border: none;
   cursor: pointer;
 }
 
 a:link {
-  color: var(--color-black);
+  color: var(--color-white);
 }
 
 a:visited {
-  color: var(--color-black);
+  color: var(--color-white);
 }
 
 a:hover {
