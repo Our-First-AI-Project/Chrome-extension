@@ -17,11 +17,12 @@
   color: var(--color-yellow);
 }
 
-.footer a box-icon {
-  fill: var(--color-white);
+.footer a .icon {
+  /* fill: var(--color-white); */
+  color: var(--color-white);
   /* width: var(--text-subtitle); */
 }
 
-.footer a:hover box-icon {
+.footer a:hover .icon {
   fill: var(--color-yellow);
 }

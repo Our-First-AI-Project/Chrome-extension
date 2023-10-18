@@ -12,13 +12,13 @@
   gap: 0.4rem;
 }
 
-.section-support-button box-icon {
+.section-support-button .icon {
   width: 1.4rem;
   height: 1.4rem;
   fill: var(--color-white);
 }
 
-.section-support-button:hover box-icon {
+.section-support-button:hover .icon {
   fill: var(--color-yellow);
 }
 
