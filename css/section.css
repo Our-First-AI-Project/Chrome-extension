@@ -53,7 +53,7 @@
 
 /* ANCHOR - section-support-text*/
 
-#section-support-text {
+.section-support-text {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -61,12 +61,12 @@
   padding: 1.2rem 0 1.6rem 0;
 }
 
-#section-support-text.support {
+.section-support-text.support {
   color: var(--color-green);
   fill: var(--color-green);
 }
 
-#section-support-text.not-support {
+.section-support-text.not-support {
   color: var(--color-pink);
   fill: var(--color-pink);
 }
