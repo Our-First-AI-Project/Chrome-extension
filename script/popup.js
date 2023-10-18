@@ -32,8 +32,10 @@ onOffToggle.addEventListener("click", () => {
   if (background.classList.contains("toggle-off")) {
     background.classList.remove("toggle-off");
     text.innerText = "On";
+    // 스크립트 실행 On
   } else {
     background.classList.add("toggle-off");
     text.innerText = "Off";
+    // 스크립트 실행 Off
   }
 });
