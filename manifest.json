@@ -21,5 +21,9 @@
       "all_frames": true,
       "match_about_blank": true
     }
-  ]
+  ],
+  "background": {
+    "service_worker": "script/background.js",
+    "type": "module"
+  }
 }
