@@ -12,5 +12,6 @@
   "action": {
     "default_popup": "page/popup.html",
     "default_icon": "assets/icon/cheese-128.png"
-  }
+  },
+  "permissions": ["tabs"]
 }
