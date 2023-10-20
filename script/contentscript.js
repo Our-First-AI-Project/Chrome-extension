@@ -15,6 +15,31 @@ const removeAds = () => {
   });
 };
 
-window.onload = function () {
+window.onload = async function () {
+  const response = await chrome.runtime.sendMessage({
+    option: "test",
+  });
+  console.log(response);
   removeAds();
 };
+
+// window.onload = async function () {
+// chrome.runtime
+//   .sendMessage({
+//     option: "isSupportedURL",
+//   })
+//   .then((response) => {
+//     console.log(response);
+//     if (response) {
+//       removeAds();
+//     }
+//   });
+// const response = await chrome.runtime.sendMessage({
+//   option: "isSupportedURL",
+// });
+// console.log("content : ", response);
+// };
+
+// window.onload = function () {
+//   removeAds();
+// };
