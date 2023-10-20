@@ -13,5 +13,17 @@
     "default_popup": "page/popup.html",
     "default_icon": "assets/icon/cheese-128.png"
   },
-  "permissions": ["tabs"]
+  "permissions": ["tabs"],
+  "content_scripts": [
+    {
+      "js": ["script/contentscript.js"],
+      "matches": ["<all_urls>"],
+      "all_frames": true,
+      "match_about_blank": true
+    }
+  ],
+  "background": {
+    "service_worker": "script/background.js",
+    "type": "module"
+  }
 }
