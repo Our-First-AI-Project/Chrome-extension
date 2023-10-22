@@ -9,6 +9,8 @@ const notSupportMsgComponent = document.querySelector(
 
 const onOffToggle = document.querySelector(".toggle-container");
 
+const supportButton = document.querySelector(".section-support-button");
+
 checkCurrentTabUrl().then((isSupportedURL) => {
   if (isSupportedURL) {
     supportMsgComponent.style.display = "flex";
@@ -31,4 +33,9 @@ onOffToggle.addEventListener("click", () => {
     text.innerText = "Off";
     chrome.storage.local.set({ isOn: false });
   }
+});
+
+supportButton.addEventListener("click", () => {
+  const supportMsgComponent = document.querySelector(".section-support-help");
+  supportMsgComponent.classList.toggle("show");
 });
