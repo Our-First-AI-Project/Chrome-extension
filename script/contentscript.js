@@ -16,30 +16,10 @@ const removeAds = () => {
 };
 
 window.onload = async function () {
-  const response = await chrome.runtime.sendMessage({
-    option: "test",
+  const isSupportedURL = await chrome.runtime.sendMessage({
+    option: "isSupportedURL",
   });
-  console.log(response);
-  removeAds();
+  if (isSupportedURL) {
+    removeAds();
+  }
 };
-
-// window.onload = async function () {
-// chrome.runtime
-//   .sendMessage({
-//     option: "isSupportedURL",
-//   })
-//   .then((response) => {
-//     console.log(response);
-//     if (response) {
-//       removeAds();
-//     }
-//   });
-// const response = await chrome.runtime.sendMessage({
-//   option: "isSupportedURL",
-// });
-// console.log("content : ", response);
-// };
-
-// window.onload = function () {
-//   removeAds();
-// };
