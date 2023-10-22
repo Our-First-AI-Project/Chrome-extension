@@ -1,4 +1,4 @@
-import { checkCurrentTabUrl } from "./background/checkCurrentTabUrl.js";
+import { checkCurrentTabUrl } from "./utils.js";
 
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
   switch (request.option) {
