@@ -11,11 +11,11 @@ const onOffToggle = document.querySelector(".toggle-container");
 
 checkCurrentTabUrl().then((isSupportedURL) => {
   if (isSupportedURL) {
-    supportMsgComponent.style.display = "block";
+    supportMsgComponent.style.display = "flex";
     notSupportMsgComponent.style.display = "none";
   } else {
     supportMsgComponent.style.display = "none";
-    notSupportMsgComponent.style.display = "block";
+    notSupportMsgComponent.style.display = "flex";
   }
 });
 
