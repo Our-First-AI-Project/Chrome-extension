@@ -1,4 +1,4 @@
-import { getCurrentTab } from "./utils.js";
+import { checkCurrentTabUrl } from "./utils.js";
 
 const supportMsgComponent = document.querySelector(
   ".section-support-text.support"
@@ -9,16 +9,13 @@ const notSupportMsgComponent = document.querySelector(
 
 const onOffToggle = document.querySelector(".toggle-container");
 
-getCurrentTab().then((tab) => {
-  if (tab) {
-    const url = tab.url;
-    if (url.startsWith("https://sports.chosun.com")) {
-      supportMsgComponent.style.display = "block";
-      notSupportMsgComponent.style.display = "none";
-    } else {
-      supportMsgComponent.style.display = "none";
-      notSupportMsgComponent.style.display = "block";
-    }
+checkCurrentTabUrl().then((isSupportedURL) => {
+  if (isSupportedURL) {
+    supportMsgComponent.style.display = "block";
+    notSupportMsgComponent.style.display = "none";
+  } else {
+    supportMsgComponent.style.display = "none";
+    notSupportMsgComponent.style.display = "block";
   }
 });
 
@@ -28,10 +25,10 @@ onOffToggle.addEventListener("click", () => {
   if (background.classList.contains("toggle-off")) {
     background.classList.remove("toggle-off");
     text.innerText = "On";
-    // 스크립트 실행 On
+    chrome.storage.local.set({ isOn: true });
   } else {
     background.classList.add("toggle-off");
     text.innerText = "Off";
-    // 스크립트 실행 Off
+    chrome.storage.local.set({ isOn: false });
   }
 });

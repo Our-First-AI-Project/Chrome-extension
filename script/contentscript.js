@@ -16,30 +16,12 @@ const removeAds = () => {
 };
 
 window.onload = async function () {
-  const response = await chrome.runtime.sendMessage({
-    option: "test",
+  const isSupportedURL = await chrome.runtime.sendMessage({
+    option: "isSupportedURL",
   });
-  console.log(response);
-  removeAds();
+  const isOn = await chrome.storage.local.get("isOn");
+  // TODO :popup에서 토글을 클릭하지 않으면 isOn이 {}로 저장되는 문제 해결
+  if (isSupportedURL && (isOn === true || isOn === {})) {
+    removeAds();
+  }
 };
-
-// window.onload = async function () {
-// chrome.runtime
-//   .sendMessage({
-//     option: "isSupportedURL",
-//   })
-//   .then((response) => {
-//     console.log(response);
-//     if (response) {
-//       removeAds();
-//     }
-//   });
-// const response = await chrome.runtime.sendMessage({
-//   option: "isSupportedURL",
-// });
-// console.log("content : ", response);
-// };
-
-// window.onload = function () {
-//   removeAds();
-// };
