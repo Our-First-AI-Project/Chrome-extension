@@ -1,4 +1,4 @@
-import { checkCurrentTabUrl } from "./background/checkCurrentTabUrl.js";
+import { checkCurrentTabUrl } from "./utils.js";
 
 const supportMsgComponent = document.querySelector(
   ".section-support-text.support"
@@ -25,10 +25,10 @@ onOffToggle.addEventListener("click", () => {
   if (background.classList.contains("toggle-off")) {
     background.classList.remove("toggle-off");
     text.innerText = "On";
-    // chrome.storage.local.set({ isOn: true });
+    chrome.storage.local.set({ isOn: true });
   } else {
     background.classList.add("toggle-off");
     text.innerText = "Off";
-    // chrome.storage.local.set({ isOn: false });
+    chrome.storage.local.set({ isOn: false });
   }
 });
