@@ -1,3 +1,5 @@
+import { APIURL } from "./constant.js";
+
 async function getCurrentTab() {
   let queryOptions = { active: true, lastFocusedWindow: true };
   let [tab] = await chrome.tabs.query(queryOptions);
@@ -10,4 +12,12 @@ export const checkCurrentTabUrl = async () => {
     return tab.url.startsWith("https://sports.chosun.com");
   }
   return false;
+};
+
+export const checkIsAd = async (url) => {
+  const requestUrl = APIURL + "?url=" + url;
+  const response = await fetch(requestUrl);
+  // TODO : 에러처리
+  const result = await response.json();
+  return result.class === "ad" ? true : false;
 };

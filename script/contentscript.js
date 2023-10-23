@@ -1,17 +1,27 @@
+const removeComponent = async (component, url, option) => {
+  const isAd = await chrome.runtime.sendMessage({
+    option: "isAd",
+    url: url,
+  });
+  if (isAd === true) {
+    if (option === "img") component.remove();
+    else {
+      // 스포츠 조선 광고 삽입 특성을 고려하여 이미지의 부모 element 제거
+      component.parentElement.remove();
+    }
+  }
+  return;
+};
+
 const removeAds = () => {
   // img 태그 제거
   let imgs = document.querySelectorAll("img");
-  imgs.forEach((img) => {
-    img.remove();
-  });
+  imgs.forEach((img) => removeComponent(img, img.src, "img"));
   // div 태그 제거
   let divs = document.querySelectorAll("div");
   divs.forEach((div) => {
     const divSrc = div.style.backgroundImage.split('"')[1];
-    if (divSrc) {
-      // 스포츠 조선 광고 삽입 특성을 고려하여 이미지의 부모 element 제거
-      div.parentElement.remove();
-    }
+    if (divSrc) removeComponent(div, divSrc, "div");
   });
 };
 
