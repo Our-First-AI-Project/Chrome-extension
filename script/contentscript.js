@@ -1,5 +1,5 @@
 const removeComponent = async (component, url, option) => {
-  if (url === "") return;
+  if (!url) return;
   const isAd = await chrome.runtime.sendMessage({
     option: "isAd",
     url: url,
