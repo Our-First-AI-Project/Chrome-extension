@@ -15,9 +15,13 @@ export const checkCurrentTabUrl = async () => {
 };
 
 export const checkIsAd = async (url) => {
-  const requestUrl = APIURL + "?url=" + url;
-  const response = await fetch(requestUrl);
-  // TODO : 에러처리
-  const result = await response.json();
-  return result.class === "ad" ? true : false;
+  try {
+    const requestUrl = APIURL + "?url=" + url;
+    const response = await fetch(requestUrl);
+    const result = await response.json();
+    return result.class === "ad" ? true : false;
+  } catch (error) {
+    console.log(error);
+    return false;
+  }
 };
