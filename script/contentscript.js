@@ -23,9 +23,9 @@ const removeAds = () => {
   // div 태그 제거
   let divs = document.querySelectorAll("div");
   divs.forEach((div) => {
-    const divSrc = div.style.backgroundImage.split('"')[1];
+    const divSrc = div.attributes.getNamedItem("data-imgsrc");
     if (divSrc) {
-      removeComponent(div, divSrc, "div");
+      removeComponent(div, divSrc.value, "div");
     }
   });
 };
