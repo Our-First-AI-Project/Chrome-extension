@@ -23,9 +23,19 @@ const removeAds = () => {
   // div 태그 제거
   let divs = document.querySelectorAll("div");
   divs.forEach((div) => {
-    const divSrc = div.attributes.getNamedItem("data-imgsrc");
-    if (divSrc) {
-      removeComponent(div, divSrc.value, "div");
+    const divImgSrc = div.attributes.getNamedItem("data-imgsrc");
+    if (divImgSrc) {
+      removeComponent(div, divImgSrc.value, "div");
+      return;
+    }
+    const divBgImg = div.style.backgroundImage;
+    if (divBgImg) {
+      const divBgImgSrc = divBgImg.split('"')[1];
+      // https가 생략된 경우에 대한 처리
+      divBgImgSrc && divBgImgSrc.startsWith("//")
+        ? removeComponent(div, "https:" + divBgImgSrc, "div")
+        : removeComponent(div, divBgImgSrc, "div");
+      return;
     }
   });
 };
