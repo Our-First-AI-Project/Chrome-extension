@@ -16,8 +16,15 @@ export const checkCurrentTabUrl = async () => {
 
 export const checkIsAd = async (url) => {
   try {
-    const requestUrl = APIURL + "?url=" + url;
-    const response = await fetch(requestUrl);
+    const response = await fetch(APIURL, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        url: url,
+      }),
+    });
     const result = await response.json();
     return result.class === "ad" ? true : false;
   } catch (error) {
