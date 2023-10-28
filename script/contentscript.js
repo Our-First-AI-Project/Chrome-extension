@@ -13,17 +13,34 @@ const removeComponent = async (component, url, option) => {
   return;
 };
 
+const makeAdMarkerTag = () => {
+  const tag = document.createElement("div");
+  tag.innerText = "광고";
+  tag.style.display = "flex";
+  tag.style.justifyContent = "center";
+  tag.style.alignItems = "center";
+  tag.style.position = "absolute";
+  tag.style.top = "0";
+  tag.style.left = "0";
+  tag.style.fontSize = "20px";
+  tag.style.fontWeight = "bold";
+  tag.style.color = "#494959";
+  tag.style.backgroundColor = "#FFACB7";
+  tag.style.width = "50px";
+  tag.style.height = "30px";
+  tag.style.padding = "5px";
+  tag.style.zIndex = "9999";
+  return tag;
+};
+
 const markComponent = async (component, url, option) => {
   const isAd = await chrome.runtime.sendMessage({
     option: "isAd",
     url: url,
   });
   if (isAd === true) {
-    component.style.border = "5px solid #F266AB";
-    component.style.boxSizing = "border-box";
-  } else {
-    component.style.border = "5px solid #2CD3E1";
-    component.style.boxSizing = "border-box";
+    const tag = makeAdMarkerTag();
+    component.parentElement.appendChild(tag);
   }
   return;
 };
