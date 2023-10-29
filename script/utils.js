@@ -19,6 +19,7 @@ export const checkIsAd = async (url) => {
     const response = await fetch(APIURL, {
       method: "POST",
       headers: {
+        Accept: "application/json",
         "Content-Type": "application/json",
       },
       body: JSON.stringify({

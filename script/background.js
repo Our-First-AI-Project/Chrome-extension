@@ -9,9 +9,14 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
       return true;
     case "isAd":
       const { url } = request;
-      checkIsAd(url).then((isAd) => {
-        sendResponse(isAd);
-      });
+      checkIsAd(url)
+        .then((isAd) => {
+          sendResponse(isAd);
+        })
+        .catch((err) => {
+          console.log(err);
+          sendResponse("error");
+        });
       return true;
     default:
       return false;
