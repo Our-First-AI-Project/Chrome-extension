@@ -1,4 +1,5 @@
 const removeComponent = async (component, url, option) => {
+  if (!url) return;
   const isAd = await chrome.runtime.sendMessage({
     option: "isAd",
     url: url,
@@ -63,9 +64,19 @@ const workStart = (workType) => {
   // div 태그 제거
   let divs = document.querySelectorAll("div");
   divs.forEach((div) => {
-    const divSrc = div.style.backgroundImage.split('"')[1];
-    if (divSrc) {
-      mainWorker(workType, div, divSrc, "div");
+    const divImgSrc = div.attributes.getNamedItem("data-imgsrc");
+    if (divImgSrc) {
+      mainWorker(workType, div, divImgSrc.value, "div");
+      return;
+    }
+    const divBgImg = div.style.backgroundImage;
+    if (divBgImg) {
+      const divBgImgSrc = divBgImg.split('"')[1];
+      // https가 생략된 경우에 대한 처리
+      divBgImgSrc && divBgImgSrc.startsWith("//")
+        ? mainWorker(workType, div, "https:" + divBgImgSrc, "div")
+        : mainWorker(workType, div, divBgImgSrc, "div");
+      return;
     }
   });
 };
